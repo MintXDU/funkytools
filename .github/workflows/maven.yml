@@ -51,4 +51,4 @@ jobs:
           password: ${{ secrets.SERVER_PASSWORD }} # 服务器密码
           port: ${{ secrets.SERVER_PORT || 22 }} # 服务器 SSH 端口，默认 22
           # 用文件方式传递脚本
-          script_path: ".github/workflows/deploy.sh"
+          script_path: ./.github/workflows/deploy.sh
