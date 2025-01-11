@@ -44,7 +44,7 @@ jobs:
     steps:
       # 5. 在服务器上启动 JAR 包
       - name: Start JAR on Server
-        uses: appleboy/ssh-action@v0.1.5
+        uses: appleboy/ssh-action@v1.2.0
         with:
           host: ${{ secrets.SERVER_HOST }} # 服务器地址
           username: ${{ secrets.SERVER_USERNAME }} # 服务器用户名
