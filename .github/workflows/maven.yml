@@ -54,8 +54,6 @@ jobs:
           script: |
             cd /funkytools/target # 进入 JAR 文件所在目录
             
-            # 杀死已经启动的 JAR 包(如果存在进程才kill)
-            if pgrep -f funkytools-0.0.1-SNAPSHOT.jar; then
-              pkill -f funkytools-0.0.1-SNAPSHOT.jar
-            fi
-#            nohup java -jar funkytools-0.0.1-SNAPSHOT.jar > app.log 2>&1 & # 启动 JAR 包，并将日志输出到 app.log
+            ps -ef | grep funkytools-0.0.1-SNAPSHOT.jar | grep -v grep | awk '{print $2}' | xargs kill -9 
+            nohup java -jar funkytools-0.0.1-SNAPSHOT.jar > nohup.out &
+            exit
