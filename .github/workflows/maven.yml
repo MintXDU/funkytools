@@ -51,7 +51,7 @@ jobs:
           password: ${{ secrets.SERVER_PASSWORD }} # 服务器密码
           port: ${{ secrets.SERVER_PORT || 22 }} # 服务器 SSH 端口，默认 22
           script: |
-            cd /funkytools/target
-            pgrep -f "funkytools-0.0.1-SNAPSHOT.jar" && pkill -f "funkytools-0.0.1-SNAPSHOT.jar" || true
+            cd /funkytools/target # 进入 JAR 文件所在目录
+            pkill -f "funkytools-0.0.1-SNAPSHOT.jar"
           debug: true
     #      nohup java -jar funkytools-0.0.1-SNAPSHOT.jar > app.log 2>&1 & # 启动 JAR 包，并将日志输出到 app.log
