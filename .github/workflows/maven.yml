@@ -54,6 +54,15 @@ jobs:
           script: |
             cd /funkytools/target # 进入 JAR 文件所在目录
             
-            ps -ef | grep funkytools-0.0.1-SNAPSHOT.jar | grep -v grep | awk '{print $2}' | xargs kill -9 
+            # 杀死已有进程
+            PIDS=$(ps -ef | grep funkytools-0.0.1-SNAPSHOT.jar | grep -v grep | awk '{print $2}')
+              if [ -n "$PIDS" ]; then
+            echo "Killing PIDs: $PIDS"
+              echo $PIDS | xargs kill -9
+              else
+              echo "No matching processes found."
+              fi
+            
+            # 启动 JAR 包
             nohup java -jar funkytools-0.0.1-SNAPSHOT.jar > nohup.out &
             exit
