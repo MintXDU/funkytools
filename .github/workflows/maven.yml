@@ -55,9 +55,14 @@ jobs:
             
             # 检查是否有匹配的进程在运行
             if pgrep -f "funkytools-0.0.1-SNAPSHOT.jar"; then
-            echo "Found running JAR process. Attempting to kill..."
-            sudo pkill -f "funkytools-0.0.1-SNAPSHOT.jar" && echo "Process killed successfully." || echo "Failed to kill process."
+              echo "Found running JAR process. Attempting to kill..."
+              pkill -f "funkytools-0.0.1-SNAPSHOT.jar"
+              if [ $? -eq 0 ]; then
+                echo "Process killed successfully."
+              else
+                echo "Failed to kill process."
+              fi
             else
-            echo "No running JAR process found."
+              echo "No running JAR process found."
             fi
     #      nohup java -jar funkytools-0.0.1-SNAPSHOT.jar > app.log 2>&1 & # 启动 JAR 包，并将日志输出到 app.log
