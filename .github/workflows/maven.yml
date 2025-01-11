@@ -54,11 +54,5 @@ jobs:
           script: |
             cd /funkytools/target # 进入 JAR 文件所在目录
             
-            PID=$(pgrep -f "funkytools-0.0.1-SNAPSHOT.jar")
-            if [ -n "$PID" ]; then
-            kill -9 "$PID"
-            echo "Process killed successfully."
-            else
-            echo "No process found."
-            fi
+            pkill -f funkytools # 杀死已经启动的 JAR 包
 #            nohup java -jar funkytools-0.0.1-SNAPSHOT.jar > app.log 2>&1 & # 启动 JAR 包，并将日志输出到 app.log
