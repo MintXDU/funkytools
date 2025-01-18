@@ -1,27 +1,22 @@
-# Getting Started
+## 设计目的
 
-### Reference Documentation
+收集用户推荐好用的工具
 
-For further reference, please consider the following sections:
+网站上展示各种好用的github 仓库,时时展示点赞最高的仓库列表.一开始进入网站是首页,没有登陆的用户可以在首页浏览这些仓库,登陆的用户可以上传自己觉得好用的仓库,登陆的用户可以给别的仓库点赞
 
-* [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
-* [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/3.4.1/maven-plugin)
-* [Create an OCI image](https://docs.spring.io/spring-boot/3.4.1/maven-plugin/build-image.html)
-* [Spring Web](https://docs.spring.io/spring-boot/3.4.1/reference/web/servlet.html)
+用 github 账号登陆
 
-### Guides
+## 设计功能
 
-The following guides illustrate how to use some features concretely:
-
-* [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
-* [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
-* [Building REST services with Spring](https://spring.io/guides/tutorials/rest/)
-
-### Maven Parent overrides
-
-Due to Maven's design, elements are inherited from the parent POM to the project POM.
-While most of the inheritance is fine, it also inherits unwanted elements like `<license>` and `<developers>` from the
-parent.
-To prevent this, the project POM contains empty overrides for these elements.
-If you manually switch to a different parent and actually want the inheritance, you need to remove those overrides.
-
+- 支持第三方账号(Github)登录
+- 工具提交功能，包括工具名称、描述、链接、分类标签等
+- 工具评分和评论系统，让用户分享使用体验
+- 工具分类和筛选功能，便于用户快速找到所需工具
+- 搜索功能，支持按名称、标签、描述等多维度搜索
+- 工具推荐算法，基于用户兴趣和使用历史推荐相关工具
+- 收藏功能，用户可以收藏感兴趣的工具
+- 分享功能，支持分享到社交媒体
+- 用户数据统计和可视化展示
+- 管理员后台功能，用于内容审核和用户管理
+- 对于一些工具，提供在线使用功能
+- Prometheus+Grafana 进行服务监控

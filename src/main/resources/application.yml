@@ -1,0 +1,28 @@
+GITHUB_CLIENT_ID: Ov23liPAJm0zJY6dWnvs
+GITHUB_CLIENT_SECRET: 39f5cd215adb2ae796e895db4485b2dea645a855
+MYSQL_USERNAME: root
+MYSQL_PASSWORD: 1104540868
+
+spring:
+  application:
+    name: funkytools
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/funkytools
+    username: ${MYSQL_USERNAME}
+    password: ${MYSQL_PASSWORD}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            client-id: ${GITHUB_CLIENT_ID}
+            client-secret: ${GITHUB_CLIENT_SECRET}
+
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML
+
