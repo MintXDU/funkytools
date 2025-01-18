@@ -2,6 +2,7 @@ GITHUB_CLIENT_ID: Ov23liPAJm0zJY6dWnvs
 GITHUB_CLIENT_SECRET: 39f5cd215adb2ae796e895db4485b2dea645a855
 MYSQL_USERNAME: root
 MYSQL_PASSWORD: 1104540868
+WEB_HOME: https://www.funkytools.me/
 
 spring:
   application:
@@ -20,6 +21,7 @@ spring:
           github:
             client-id: ${GITHUB_CLIENT_ID}
             client-secret: ${GITHUB_CLIENT_SECRET}
+            redirect-uri: ${WEB_HOME}
 
   thymeleaf:
     prefix: classpath:/templates/
