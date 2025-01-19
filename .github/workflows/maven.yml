@@ -55,9 +55,7 @@ jobs:
           password: ${{ secrets.SERVER_PASSWORD }} # 服务器密码
           port: ${{ secrets.SERVER_PORT || 22 }} # 服务器 SSH 端口，默认 22
           envs: # ssh 传递环境变量
-            OAUTH2_GITHUB_CLIENT_ID: OAUTH2_GITHUB_CLIENT_ID
-            OAUTH2_GITHUB_CLIENT_SECRET: OAUTH2_GITHUB_CLIENT_SECRET
-            OAUTH2_GITHUB_REDIRECT_URI: OAUTH2_GITHUB_REDIRECT_URI
+            OAUTH2_GITHUB_CLIENT_ID,OAUTH2_GITHUB_CLIENT_SECRET,OAUTH2_GITHUB_REDIRECT_URI
           # 用文件方式传递脚本
           script: |
             cd /funkytools/target # 进入 JAR 文件所在目录
