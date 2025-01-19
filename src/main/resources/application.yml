@@ -1,5 +1,3 @@
-GITHUB_CLIENT_ID: Ov23liPAJm0zJY6dWnvs
-GITHUB_CLIENT_SECRET: 39f5cd215adb2ae796e895db4485b2dea645a855
 MYSQL_USERNAME: root
 MYSQL_PASSWORD: 1104540868
 
@@ -18,9 +16,9 @@ spring:
       client:
         registration:
           github:
-            client-id: ${GITHUB_CLIENT_ID}
-            client-secret: ${GITHUB_CLIENT_SECRET}
-            redirect-uri: "https://www.funkytools.me/login/oauth2/code/github"
+            client-id: ${OAUTH2_GITHUB_CLIENT_ID}
+            client-secret: ${OAUTH2_GITHUB_CLIENT_SECRET}
+            redirect-uri: ${OAUTH2_GITHUB_REDIRECT_URI}
 
   thymeleaf:
     prefix: classpath:/templates/
